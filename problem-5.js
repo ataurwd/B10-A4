@@ -1,5 +1,7 @@
 function  waitingTime(waitingTimes  , serialNumber) {
-
+    if(!Array.isArray(waitingTimes)|| typeof serialNumber !== 'number'){
+        return 'Invalid Input'
+    }
     let totalWatiingTime = 0;
     for (const arr of waitingTimes) {
         totalWatiingTime += arr;
@@ -11,4 +13,4 @@ function  waitingTime(waitingTimes  , serialNumber) {
     return isratInterviewTime;
 }
 
-console.log(waitingTime([ 3, 5, 7, 11, 6 ], 10));
+console.log(waitingTime([3, 5, 7, 11, 6 ], 10));

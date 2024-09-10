@@ -15,7 +15,7 @@ function sendNotification(email){
     return result;
 }
 
-const input = 'farhan34@yahoo.com';
+const input = 'nadim.naem5@outlook.com';
 const resutl = sendNotification(input);
 console.log(resutl);
 

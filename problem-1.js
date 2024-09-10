@@ -8,7 +8,7 @@ function calculateTax(income, expenses){
     return tax; 
 }
 
-console.log(calculateTax(-5000, 1500));
+console.log(calculateTax(7000, 7000));
 
 
 
