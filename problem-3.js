@@ -10,4 +10,4 @@ function checkDigitsInName(name) {
     return false;
 }
 
-console.log(checkDigitsInName(('!@#')));
+console.log(checkDigitsInName(42353));

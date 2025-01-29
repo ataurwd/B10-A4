@@ -12,5 +12,4 @@ function  waitingTime(waitingTimes  , serialNumber) {
     let isratInterviewTime = avarageTime * ((serialNumber - 1) - arrayLength);
     return isratInterviewTime;
 }
-
-console.log(waitingTime([3, 5, 7, 11, 6 ], 10));
+ 

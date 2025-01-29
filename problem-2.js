@@ -2,23 +2,13 @@ function sendNotification(email){
     if(!email.includes('@')){
         return 'Invalid Email'
     }
-    let userName = '';
-    let companyName = ''
-    for(let i = 0; i < email.length; i++){
-        if(email[i] === '@'){
-            userName = email.slice(0, i)
-            companyName = email.slice(i + 1)
-            break;
-        }
-    }
+    const findWord = email.split('@')
+    const userName = findWord[0]
+    const companyName = findWord[1]
     let result = userName + ' ' + 'sent you an email from' + ' ' + companyName;
     return result;
 }
 
-const input = 'nadim.naem5@outlook.com';
-const resutl = sendNotification(input);
-console.log(resutl);
 
 
-
-
+console.log(sendNotification('rrr.rr@gmail.com'));

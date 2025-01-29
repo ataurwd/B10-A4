@@ -7,22 +7,18 @@ function calculateTax(income, expenses){
     return tax; 
 }
 
+
 function sendNotification(email){
     if(!email.includes('@')){
         return 'Invalid Email'
     }
-    let userName = '';
-    let companyName = ''
-    for(let i = 0; i < email.length; i++){
-        if(email[i] === '@'){
-            userName = email.slice(0, i)
-            companyName = email.slice(i + 1)
-            break;
-        }
-    }
+    const findWord = email.split('@')
+    const userName = findWord[0]
+    const companyName = findWord[1]
     let result = userName + ' ' + 'sent you an email from' + ' ' + companyName;
     return result;
 }
+
 
 function checkDigitsInName(name) {
     if(typeof name !== 'string'){
@@ -36,18 +32,16 @@ function checkDigitsInName(name) {
     return false;
 }
 
+
 function calculateFinalScore(obj) {
     if(typeof obj !== 'object' || obj === null){
         return 'Invalid Input'
     }
-    let isFarmar = true
-    if(obj.isFFamily){
-        isFarmar = 20;
+    let isFarmarPoint = obj.isFFamily ? 20: 0;
+    let totalPoint = 0;
+    if(obj.testScore <= 50 && obj.schoolGrade <= 30){
+            totalPoint = obj.testScore + obj.schoolGrade + isFarmarPoint ;
     }
-    else{
-        0
-    }
-    let totalPoint = obj.testScore + obj.schoolGrade + isFarmar ;
     if(totalPoint >= 80){
         return true;
     }
@@ -56,16 +50,16 @@ function calculateFinalScore(obj) {
 
 
 function  waitingTime(waitingTimes  , serialNumber) {
-    if(!Array.isArray(waitingTimes)|| typeof serialNumber !== 'number'){
+    if(!Array.isArray(waitingTimes) || typeof serialNumber !== 'number'){
         return 'Invalid Input'
     }
-    let totalWatiingTime = 0;
+    let totalWaitingTime = 0;
     for (const arr of waitingTimes) {
-        totalWatiingTime += arr;
+        totalWaitingTime += arr;
     }
     let arrayLength = waitingTimes.length;
     
-    let avarageTime = parseInt(totalWatiingTime / arrayLength);
+    let avarageTime = parseInt(totalWaitingTime / arrayLength);
     let isratInterviewTime = avarageTime * ((serialNumber - 1) - arrayLength);
     return isratInterviewTime;
 }

@@ -1,13 +1,14 @@
-function checkDigitsInName(name) {
-    if(typeof name !== 'string'){
-        return "Invalid Input"
+function calculateFinalScore(obj) {
+    if(typeof obj !== 'object' || obj.testScore >= 50 || obj.schoolGrade >= 30){
+     return "Invalid Input";
     }
-    for(let i = 0; i < name.length; i++){
-        if(!isNaN(name[i])){
-            return true;
-        }
+    let totalMarks = obj.testScore + obj.schoolGrade ;
+    if(obj.isFFamily){
+        totalMarks += 20;
     }
-    return false;
-}
-
-console.log(checkDigitsInName(('Suman')));
+    if(totalMarks >=70 ){
+        return true;
+    }
+    return false
+ }
+ 
