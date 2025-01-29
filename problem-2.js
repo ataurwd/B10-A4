@@ -19,6 +19,6 @@ const input = 'nadim.naem5@outlook.com';
 const resutl = sendNotification(input);
 console.log(resutl);
 
-// hlwo
+
 
 
